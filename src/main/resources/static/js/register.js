@@ -1,6 +1,5 @@
 function Register()
 {
-    //alert("Hello! I am step 1");
     const info = {
         username : document.getElementById("username").value,
         password : document.getElementById("password").value,
@@ -11,62 +10,24 @@ function Register()
         phone : document.getElementById("phone").value
     };
     const xhr= new XMLHttpRequest();
-    xhr.open("POST", "/register").then(res => {
-        let data = res.data
-        if (data.status === 'success') {
-            let user = data.data
-            sessionStorage.setItem('user', JSON.stringify(user))
-            window.location.href = "/"
-        } else {
-            alert(data.msg);
-        }
-    })
+    xhr.open("POST", "/register",false)
     xhr.setRequestHeader("Content-Type","application/json");
+    xhr.onreadystatechange = function() {
+        alert("?????????????????");
+        if (xhr.readyState === 4) {
+            alert("Hello! State === 4");
+            //根据服务器的响应内容格式处理响应结果
+            if (xhr.getResponseHeader('content-type') === 'application/json') {
+                var result = JSON.parse(xhr.responseText);
+                if (result.status === 'success') {
+                    let user = result.data
+                    sessionStorage.setItem('user', JSON.stringify(user))
+                    window.location.href = "/"
+                } else {
+                    alert(result.status);
+                }
+            }
+        }
+    }
     xhr.send(JSON.stringify(info));
-
-    let data=res.data
-
-    // let axiosConfig = {
-    //     headers: {
-    //         'Content-Type': 'application/json;charset=UTF-8',
-    //         "Access-Control-Allow-Origin": "*",
-    //     }
-    // };
-    // axios.post("/register", info,axiosConfig)
-    //     .then(res => {
-    //         alert("Hello! I am step max");
-    //         let data = res.data
-    //         if (data.status === 'success') {
-    //             let user = data.data
-    //             sessionStorage.setItem('user', JSON.stringify(user))
-    //             window.location.href = "/"
-    //         } else {
-    //             alert(data.msg);
-    //         }
-    //     })
 }
-
-// const vm = new Vue({
-//
-// method:{
-//     register(){
-//         let _this = this
-//         this.$refs['form'].validate((valid) => {
-//             if (valid) {
-//                 axios.post('/register', this.form)
-//                     .then(res => {
-//                         let data = res.data
-//                         if (data.status === 'success') {
-//                             let user = data.data
-//                             sessionStorage.setItem('user', JSON.stringify(user))
-//                             window.location.href = "/"
-//                         } else {
-//                             this.$message.error(data.msg)
-//                         }
-//
-//                     })
-//             }
-//         });
-//     }
-// }
-// })
