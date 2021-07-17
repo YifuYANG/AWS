@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration</title>
+  <script type="text/javascript" src="js/register.js"></script>
+</head>
+<body>
+<form>
+  <table border="20" align="center" width="55%">
+    <caption>User detail</caption>
+
+    <tr>
+      <td align="right">
+        <sup><font color="red">*</font></sup>Username：
+      </td>
+      <td><input type="text" id="username"/>
+    </tr>
+
+    <tr>
+      <td align="right">
+        <sup><font color="red">*</font></sup>Password：
+      </td>
+      <td><input type="password" id="password"/>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="right">
+        <sup><font color="red">*</font></sup>type：
+      </td>
+      <td><select id="type">
+        <option value="none">--choose one--</option>
+        <option value=0>User</option>
+        <option value=1>Editor </option>
+      </select>
+    </tr>
+
+    <tr>
+      <td align="right">
+        <sup><font color="red">*</font></sup>Full name：
+      </td>
+      <td><input type="text" id="name"/></td>
+    </tr>
+
+    <tr>
+      <td align="right">
+        sex：
+      </td>
+      <td><select id="sex">
+        <option value="none">--choose one--</option>
+        <option value=0>male</option>
+        <option value=1>female </option>
+      </select>
+    </tr>
+
+    <tr>
+      <td align="right">
+        <sup><font color="red">*</font></sup>Email：
+      </td>
+      <td><input type="text" id="email"/>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="right">
+        Phone：
+      </td>
+      <td><input type="text" id="phone"/>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="center" colspan="2">
+        <button type="submit" onclick="Register()">Register</button>
+      </td>
+    </tr>
+
+  </table>
+</form>
+</body>
+</html>

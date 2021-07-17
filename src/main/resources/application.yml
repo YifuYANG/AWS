@@ -1,0 +1,20 @@
+server:
+  port: 8090
+spring:
+  mvc:
+    favicon:
+      enabled: false
+  datasource:
+    username: root
+    password: 23d78yyf
+    url: jdbc:mysql://127.0.0.1:3306/photoshop?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto:  update
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
