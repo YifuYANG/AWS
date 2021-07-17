@@ -13,10 +13,7 @@ function Register()
     xhr.open("POST", "/register",false)
     xhr.setRequestHeader("Content-Type","application/json");
     xhr.onreadystatechange = function() {
-        alert("?????????????????");
         if (xhr.readyState === 4) {
-            alert("Hello! State === 4");
-            //根据服务器的响应内容格式处理响应结果
             if (xhr.getResponseHeader('content-type') === 'application/json') {
                 var result = JSON.parse(xhr.responseText);
                 if (result.status === 'success') {
@@ -24,7 +21,7 @@ function Register()
                     sessionStorage.setItem('user', JSON.stringify(user))
                     window.location.href = "/"
                 } else {
-                    alert(result.status);
+                    alert(result.msg);
                 }
             }
         }
