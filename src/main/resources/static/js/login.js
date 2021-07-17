@@ -4,7 +4,7 @@ function Login(){
         password : document.getElementById("password").value,
     };
     const xhr= new XMLHttpRequest();
-    xhr.open("POST", "/register",false)
+    xhr.open("POST", "/login",false)
     xhr.setRequestHeader("Content-Type","application/json");
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {

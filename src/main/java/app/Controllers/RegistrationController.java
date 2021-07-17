@@ -17,10 +17,10 @@ import java.util.Map;
 public class RegistrationController {
 
     @Autowired
-    UserRepository userRepository;
-
+    private UserRepository userRepository;
     @Autowired
     private BCryptPasswordEncoder encoder;
+
     @ResponseBody
     @PostMapping("/register")
     public Map<String, Object> register(@RequestBody RegisterForm regUser) {
