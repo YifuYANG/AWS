@@ -2,17 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="Login.css"/>
+    <title>Sign In</title>
+    <script type="text/javascript" src="js/register.js"></script>
 </head>
 <body>
-<p id="login">
-<h1>Login</h1>
-<form method="post">
-    <input type="text" required="required" placeholder="用户名" name="u"></input>
-    <input type="password" required="required" placeholder="密码" name="p"></input>
-    <button class="but" type="submit">登录</button>
+<body>
+<form>
+    <table border="20" align="center" width="55%">
+        <caption>Login</caption>
+
+        <tr>
+            <td align="right">
+                Username：
+            </td>
+            <td><input type="text" id="username" onchange="Check_1()"/>
+                <span id="text_1"></span>
+        </tr>
+        <tr>
+            <td align="right">
+               Password：
+            </td>
+            <td><input type="password" id="password" onchange="Check_2()"/>
+                <span id="text_2"></span>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                <button type="reset" onclick="Login()" >Login</button>
+            </td>
+        </tr>
+    </table>
 </form>
-</p>
 </body>
 </html>

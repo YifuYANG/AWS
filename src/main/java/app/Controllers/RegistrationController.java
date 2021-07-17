@@ -5,6 +5,7 @@ import app.JpaRepository.UserRepository;
 import app.Vo.RegisterForm;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.sql.Timestamp;
@@ -18,6 +19,8 @@ public class RegistrationController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    private BCryptPasswordEncoder encoder;
     @ResponseBody
     @PostMapping("/register")
     public Map<String, Object> register(@RequestBody RegisterForm regUser) {
@@ -28,7 +31,7 @@ public class RegistrationController {
         if (user == null) {
             user = new User();
             user.setUsername(regUser.getUsername());
-            user.setPassword(regUser.getPassword());
+            user.setPassword(encoder.encode(regUser.getPassword()));
             user.setType(regUser.getType());
             user.setSex(regUser.getSex());
             user.setPhone(regUser.getPhone());
