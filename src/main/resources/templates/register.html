@@ -6,6 +6,7 @@
   <script type="text/javascript" src="js/register.js"></script>
 </head>
 <body>
+<body>
 <form>
   <table border="20" align="center" width="55%">
     <caption>User detail</caption>
@@ -14,41 +15,52 @@
       <td align="right">
         <sup><font color="red">*</font></sup>Username：
       </td>
-      <td><input type="text" id="username"/>
+      <td><input type="text" id="username" onchange="Check_1()"/>
+        <span id="text_1"></span>
     </tr>
-
     <tr>
       <td align="right">
         <sup><font color="red">*</font></sup>Password：
       </td>
-      <td><input type="password" id="password"/>
+      <td><input type="password" id="password" onchange="Check_2()"/>
+        <span id="text_2"></span>
       </td>
     </tr>
 
     <tr>
       <td align="right">
-        <sup><font color="red">*</font></sup>type：
+        <sup><font color="red">*</font></sup>Re-enter password：
       </td>
-      <td><select id="type">
+      <td><input type="password" id="passwordcheck" onchange="Check_3()"/>
+        <span id="text_3"></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="right">
+        <sup><font color="red">*</font></sup>Type：
+      </td>
+      <td><select id="type" onchange="Check_4()">
         <option value="none">--choose one--</option>
         <option value=0>User</option>
         <option value=1>Editor </option>
       </select>
+        <span id="text_4"></span>
     </tr>
 
     <tr>
       <td align="right">
-        <sup><font color="red">*</font></sup>Full name：
+        Full name：
       </td>
       <td><input type="text" id="name"/></td>
     </tr>
 
     <tr>
       <td align="right">
-        sex：
+        Sex：
       </td>
       <td><select id="sex">
-        <option value="none">--choose one--</option>
+        <option value=0>--choose one--</option>
         <option value=0>male</option>
         <option value=1>female </option>
       </select>
@@ -58,7 +70,8 @@
       <td align="right">
         <sup><font color="red">*</font></sup>Email：
       </td>
-      <td><input type="text" id="email"/>
+      <td><input type="text" id="email" onchange="Check_5()"/>
+        <span id="text_5"></span>
       </td>
     </tr>
 
@@ -72,7 +85,7 @@
 
     <tr>
       <td align="center" colspan="2">
-        <button type="reset" onclick="Register()">Register</button>
+        <button type="reset" onclick="Register()" id="b1">Register</button>
       </td>
     </tr>
 
