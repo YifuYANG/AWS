@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 
 @Entity
 @Data
-public class Product {
+public class Photo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,27 +16,18 @@ public class Product {
     private String name;
 
     @Column
-    private Double price;
+    private Integer ownerid;
 
-    @Column
-    private String img;
+    @Lob
+    @Column(columnDefinition = "MEDIUMBLOB",length = 1000)
+    private byte[] image;
 
     @Column
     private String description;
 
     @Column
-    private Integer onSale;
-
-    @Column
-    private Integer saleVolume;
-
-    @Column
-    private Integer ownerId;
+    private Integer likes;
 
     @Column
     private Timestamp createdAt;
-
-    @Column
-    private Timestamp updatedAt;
-
 }

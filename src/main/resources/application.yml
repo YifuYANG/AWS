@@ -18,3 +18,16 @@ spring:
       max-request-size: -1
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
+
+
+#cloud:
+#  aws:
+#    credentials:
+#      access-key ID:AKIA6GJNR6GLABZINCMW
+#      secret-access Key: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
+#    region:
+#      static:us-east-1
+#
+#application:
+#  bucket:
+#    name:

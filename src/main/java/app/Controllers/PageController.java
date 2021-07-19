@@ -24,4 +24,10 @@ public class PageController
     public String routeRegister(){
         return "register";
     }
+
+    // Router to Register Page
+    @GetMapping( "/profile")
+    public String routeProfile(){
+        return "profile";
+    }
 }
