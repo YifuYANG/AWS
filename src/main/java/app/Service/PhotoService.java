@@ -19,10 +19,11 @@ public class PhotoService {
     PhotoRepository photoRepository;
 
 
-    public Photo saveFile(MultipartFile files,String name,String desc){
+    public Photo saveFile(MultipartFile files,String name,String desc,Integer id){
         try {
             Photo photo=new Photo();
             photo.setName(name);
+            photo.setOwnerid(id);
             photo.setDescription(desc);
             photo.setLikes(0);
             photo.setCreatedAt(new Timestamp(System.currentTimeMillis()));

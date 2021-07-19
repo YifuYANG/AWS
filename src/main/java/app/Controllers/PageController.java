@@ -25,7 +25,7 @@ public class PageController
         return "register";
     }
 
-    // Router to Register Page
+    // Router to Profile Page
     @GetMapping( "/profile")
     public String routeProfile(){
         return "profile";
