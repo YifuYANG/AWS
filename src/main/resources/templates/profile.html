@@ -9,35 +9,44 @@
     <link rel="icon" href="images/icon.png" />
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/style4.css">
-    <script type="text/javascript" src="js/profile.js"></script>
+<!--    <script type="text/javascript" src="js/profile.js"></script>-->
 </head>
 
-<body onload="Id()">
-<div class="card">
-    <div class="card-header">
-        <p class="h4 mb-2 text-center">Add Product</p>
-    </div>
-
-    <div class="card-body">
-        <form class="text-center border border-light p-5" th:action="@{/add}" method="POST" enctype="multipart/form-data">
-
-            <input readonly id="id" name="id">
-            <!-- Name -->
-            <input type="text" name="name" id="name" class="form-control mb-4"
-                   placeholder="Product Name">
-
-            <div class="custom-file mb-4">
-                <input type="file" name="file" class="custom-file-input"
-                       id="customFile" accept="image/*"> <label class="custom-file-label"
-                                               for="customFile">Product Image</label>
-            </div>
-            <!-- Description -->
-            <textarea class="form-control mb-4" id="description" name="desc"
-                      placeholder="Product Description">Product Description
-                                 </textarea>
-            <!-- Sign in button -->
-            <button class="btn btn-info btn-block" type="submit">add</button>
-        </form>
-    </div>
+<script type="text/javascript" src="~/js/profile.js"></script>
+<body>
+<div class="col-12">
+    <h3 class="text-center">My Photo</h3>
+    <hr>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">image</th>
+            <th scope="col">name</th>
+            <th scope="col">description</th>
+            <th scope="col">likes</th>
+            <th scope="col">date of upload</th>
+        </tr>
+        </thead>
+        <tr th:each="photo : ${photo}">
+            <td><img th:src="${photo.getImageurl()}" width="100" height="100"></td>
+            <td th:text="${photo.getName()}"></td>
+            <td th:text="${photo.getDescription()}"></td>
+            <td th:text="${photo.getLikes()}"></td>
+            <td th:text="${photo.getCreatedAt()}"></td>
+            <td>
+                <button th:onclick="|deletephoto(${photo.getId()},${photo.getOwnerid()})|">delete</button>
+            </td>
+        </tr>
+    </table>
+    <hr>
 </div>
 </body>
+<script>
+    function deletephoto(id,ownerid){
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/profile/remove/"+id);
+        window.location.reload();
+        xhr.send();
+    }
+</script>
+</html>

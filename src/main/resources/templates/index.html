@@ -1,59 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>E-commerce application</title>
+  <title>Photo Gallery</title>
 
   <!-- Bootstrap CSS  & FontAwsome-->
-  <link href="../static/css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
   <link href="font-awesome/css1/all.css" rel="stylesheet">
   <link rel="icon" href="images/icon.png" />
   <!-- Our Custom CSS -->
-  <link rel="stylesheet" href="../static/css/style4.css">
+  <link rel="stylesheet" href="css/style4.css">
   <script type="text/javascript" src="font-awesome/js1/fontawesome.js"></script>
-  <script type="text/javascript" src=""></script>
-
+  <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
 <div class="wrapper">
-  <!-- Sidebar  -->
-  <nav id="sidebar">
-    <div class="sidebar-header">
-      <h3>&nbsp;&nbsp;&nbsp;Welcome</h3>
-      <strong><i class="fa fa-shopping-cart" aria-hidden="true"></i></strong>
-    </div>
-    <ul class="list-unstyled components">
-      <li class="active"><a href="#homeSubmenu"
-                            data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle"> <i class="fas fa-home"></i> Home
-      </a>
-        <ul class="collapse list-unstyled" id="homeSubmenu">
-          <li><a href="#">My cart</a></li>
-          <li><a href="#">My wishlist</a></li>
-        </ul></li>
-      <li><a href="#"> <i class="fas fa-briefcase"></i> About
-      </a> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-              class="dropdown-toggle"> <i class="fas fa-copy"></i> pages
-      </a>
-        <ul class="collapse list-unstyled" id="pageSubmenu">
-          <li><a href="#">category</a></li>
-          <li><a href="#">products</a></li>
-          <li><a href="#">more</a></li>
-        </ul></li>
-      <li><a href="#"> <i class="fas fa-image"></i> Portfolio
-      </a></li>
-      <li><a href="#"> <i class="fas fa-question"></i> FAQ
-      </a></li>
-      <li><a href="#"> <i class="fas fa-paper-plane"></i> Contact
-      </a></li>
-    </ul>
-  </nav>
-
   <!-- Page Content  -->
   <div id="content">
     <nav class="navbar navbar-expand-lg navbar-light"
@@ -69,36 +34,45 @@
                  placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <button class="btn btn-light d-inline-block d-lg-none ml-auto"
-                type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-          <i class="fas fa-align-justify"></i>
-        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link fl mr-4 btn btn-light" href="#">
-              <i class="fa fa-shopping-cart" title="View Cart"
-                 style="color: red;"></i><span class="label">10</span>
-            </a></li>
-            <li class="nav-item  active"><a class="nav-link btn btn-light mr-2" href="#"
-                                            onclick="handleAddProduct(event);">add Product</a></li>
-            <li class="nav-item"><a onclick=" handleListProduct(event);" class="nav-link btn btn-light mr-2" href="#">Products</a></li>
-            <li class="nav-item"><a class="nav-link btn btn-light" href="#">Category</a></li>
+            <li class="nav-item  active"><a class="nav-link btn btn-light mr-2"
+                                            onclick="GotoUpload()" type="reset">Upload Photo</a></li>
+            <li class="nav-item"><a onclick="Gotoprofile()" type="reset" class="nav-link btn btn-light mr-2">My Photo</a></li>
+            <li class="nav-item"><a onclick="Logout()" class="nav-link btn btn-light mr-2" type="reset">Log out</a></li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="line"></div>
     <div class="container" id="app">
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">image</th>
+          <th scope="col"></th>
+          <th scope="col">name</th>
+          <th scope="col"></th>
+          <th scope="col">description</th>
+          <th scope="col"></th>
+          <th scope="col">likes</th>
+          <th scope="col"></th>
+          <th scope="col">date of upload</th>
+        </tr>
+        </thead>
 
-
+        </tr>
+      </table>
 
     </div>
     <div class="line"></div>
   </div>
 </div>
+
+
+
+
+
 <!-- Bootstrap JS & jQuery -->
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
@@ -109,12 +83,5 @@
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="api/ajaxFetch.js"></script>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#sidebarCollapse').on('click', function() {
-      $('#sidebar').toggleClass('active');
-    });
-  });
-</script>
 </body>
 </html>

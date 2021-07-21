@@ -22,3 +22,14 @@ function Login(){
     }
     xhr.send(JSON.stringify(info));
 }
+
+function Redirect(){
+    window.location.href = "/register";
+}
+
+function Check(){
+    if(sessionStorage.getItem("user").length!==0){
+        alert("Logout before you can login new account");
+        window.location.href = "/";
+    }
+}

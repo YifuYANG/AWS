@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+    <!-- Bootstrap CSS  & FontAwsome-->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="font-awesome/css1/all.css" rel="stylesheet">
+    <link rel="icon" href="images/icon.png" />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/style4.css">
+    <script type="text/javascript" src="js/uploadphoto.js"></script>
+</head>
+
+<body onload="Id()">
+<button class="btn btn-info btn-block" type="reset" onclick="Back()">Home page</button>
+<div class="card">
+    <div class="card-header">
+        <p class="h4 mb-2 text-center">Add Product</p>
+    </div>
+
+    <div class="card-body">
+        <form class="text-center border border-light p-5" th:action="@{/upload}" method="POST" enctype="multipart/form-data">
+
+            <tr>
+                <td>
+                    Welcome User ID：
+                </td>
+                <td><input readonly id="id" name="id" style= "background-color:transparent;border:0;">
+            </tr>
+            <!-- Name -->
+            <input type="text" name="name" id="name" class="form-control mb-4"
+                   placeholder="Product Name">
+
+            <div class="custom-file mb-4">
+                <input type="file" name="file" class="custom-file-input"
+                       id="customFile" accept="image/png,image/ipeg,image/jpg" required="required"> <label class="custom-file-label"
+                                               for="customFile">Product Image</label>
+            </div>
+            <!-- Description -->
+            <textarea class="form-control mb-4" id="description" name="desc"
+                      placeholder="Product Description">Product Description
+                                 </textarea>
+            <!-- Sign in button -->
+            <button class="btn btn-info btn-block" type="submit">add</button>
+        </form>
+    </div>
+    <p th:text="${msg}"></p>
+</div>
+</body>

@@ -30,4 +30,7 @@ public class Photo {
 
     @Column
     private Timestamp createdAt;
+
+    @Column
+    private String imageurl;
 }

@@ -101,3 +101,9 @@ function Register()
         xhr.send(JSON.stringify(info));
     }
 }
+function Check(){
+        if(sessionStorage.getItem("user").length!==0){
+            alert("Logout so you can register a new account");
+            window.location.href = "/";
+        }
+}
