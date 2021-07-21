@@ -42,4 +42,10 @@ public class PageController
     public String routeProfile(){
         return "profile";
     }
+
+    // Router to Photo photo detail Page
+    @GetMapping( "/photodetail")
+    public String routeDetail(){
+        return "photodetail";
+    }
 }

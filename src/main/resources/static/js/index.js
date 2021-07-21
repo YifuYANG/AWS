@@ -47,3 +47,13 @@ function hideBoth()  {
 function Login(){
     window.location.href = "/login"
 }
+
+function Gotodetail(id){
+    //alert(id)
+    //window.location.href = "/photodetail/"+id;
+    // var xhr = new XMLHttpRequest();
+    // xhr.open("GET", "/photodetail/"+id);
+    // xhr.send();
+
+    window.location.href = "/photodetail/"+id;
+}

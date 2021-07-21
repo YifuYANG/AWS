@@ -58,7 +58,7 @@
         </tr>
         </thead>
         <tr th:each="photo : ${photo}">
-          <td><img th:src="${photo.getImageurl()}" width="300" height="150"></td>
+          <td><button th:onclick="|Gotodetail(${photo.getId()})|"><img th:src="${photo.getImageurl()}" width="300" height="150"></button></td>
           <td th:text="${photo.getName()}"></td>
           <td th:text="${photo.getDescription()}"></td>
           <td th:text="${photo.getLikes()}"></td>
