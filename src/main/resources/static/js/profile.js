@@ -1,3 +1,3 @@
-function deletephoto(id){
-    alert(id);
+function Home(){
+    window.location.href = "/"
 }

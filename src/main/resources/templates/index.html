@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="utf-8">
@@ -17,7 +17,7 @@
   <script type="text/javascript" src="font-awesome/js1/fontawesome.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
 </head>
-<body>
+<body onload="hideBoth()">
 <div class="wrapper">
   <!-- Page Content  -->
   <div id="content">
@@ -29,38 +29,40 @@
           <i class="fas fa-align-left"></i>
           <!-- <span>Toggle Sidebar</span> -->
         </button>
-        <form class="form-inline frm">
+        <form class="form-inline frm" th:action="@{/}" method="POST">
           <input class="form-control mr-sm-2" type="search"
-                 placeholder="Search" aria-label="Search">
+                 placeholder="Search" aria-label="Search" name="search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item  active"><a class="nav-link btn btn-light mr-2"
-                                            onclick="GotoUpload()" type="reset">Upload Photo</a></li>
-            <li class="nav-item"><a onclick="Gotoprofile()" type="reset" class="nav-link btn btn-light mr-2">My Photo</a></li>
-            <li class="nav-item"><a onclick="Logout()" class="nav-link btn btn-light mr-2" type="reset">Log out</a></li>
+                                            onclick="GotoUpload()" type="reset" id="one">Upload Photo</a></li>
+            <li class="nav-item"><a onclick="Gotoprofile()" type="reset" class="nav-link btn btn-light mr-2" id="two">My Photo</a></li>
+            <li class="nav-item"><a onclick="Logout()" class="nav-link btn btn-light mr-2" type="reset" id="three">Log out</a></li>
+            <li class="nav-item"><a onclick="Login()" class="nav-link btn btn-light mr-2" type="reset" id="four">Login</a></li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="line"></div>
     <div class="container" id="app">
-      <table class="table">
+      <table class="table" style="width:1400px;margin-left:auto;margin-right:auto;" >
         <thead class="thead-dark">
         <tr>
           <th scope="col">image</th>
-          <th scope="col"></th>
           <th scope="col">name</th>
-          <th scope="col"></th>
           <th scope="col">description</th>
-          <th scope="col"></th>
           <th scope="col">likes</th>
-          <th scope="col"></th>
           <th scope="col">date of upload</th>
         </tr>
         </thead>
-
+        <tr th:each="photo : ${photo}">
+          <td><img th:src="${photo.getImageurl()}" width="300" height="150"></td>
+          <td th:text="${photo.getName()}"></td>
+          <td th:text="${photo.getDescription()}"></td>
+          <td th:text="${photo.getLikes()}"></td>
+          <td th:text="${photo.getCreatedAt()}"></td>
         </tr>
       </table>
 

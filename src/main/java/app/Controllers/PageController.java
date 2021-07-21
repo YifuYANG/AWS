@@ -4,16 +4,19 @@ import app.JpaRepository.PhotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class PageController
 {
+    @Autowired
+    PhotoRepository photoRepository;
     // Router to Index Page
     @GetMapping(value = "/")
-    public String index(){
-        return "index";
+    public ModelAndView index(){
+        ModelAndView modelAndView = new ModelAndView("index");
+        modelAndView.addObject("photo",photoRepository.findAll());
+        return modelAndView;
     }
 
     // Router to Login Page

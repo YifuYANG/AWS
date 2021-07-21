@@ -41,16 +41,4 @@
     <hr>
 </div>
 </body>
-<script>
-    function deletephoto(id,ownerid){
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "/profile/remove/"+id);
-        window.location.reload();
-        xhr.send();
-    }
-
-    function Home(){
-        window.location.href = "/"
-    }
-</script>
 </html>

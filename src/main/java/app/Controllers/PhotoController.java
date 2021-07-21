@@ -6,23 +6,12 @@ import app.JpaRepository.PhotoRepository;
 import app.Service.PhotoService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.ClassUtils;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -63,5 +52,20 @@ public class PhotoController {
         String url = "redirect://profile/"+ownerId;
         System.out.println(url);
         return url;
+    }
+
+    @PostMapping(value = "/")
+    public ModelAndView search(@RequestParam(value = "search", required = false, defaultValue = "") String search){
+        ModelAndView modelAndView = new ModelAndView("index");
+        List<Photo> results = new ArrayList<>();
+        for (Photo p : photoRepository.findAll()) {
+            if (p.getName().toLowerCase().contains(search.toLowerCase())) {
+                results.add(p);
+            } else if(p.getOwnerid().toString().equals(search)){
+                results.add(p);
+            }
+        }
+        modelAndView.addObject("photo",results);
+        return modelAndView;
     }
 }

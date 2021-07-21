@@ -26,3 +26,24 @@ function Logout(){
         alert("you are not login");
     }
 }
+
+function hideBoth()  {
+     if(sessionStorage.length!==0){
+         if(JSON.parse(sessionStorage.getItem("user")).type===0){
+             //alert(sessionStorage.getItem("user").type===0)
+             document.getElementById("one").style.visibility="hidden";
+             document.getElementById("two").style.visibility="hidden";
+             document.getElementById("four").style.visibility="hidden";
+         } else{
+             document.getElementById("four").style.visibility="hidden";
+         }
+    } else {
+         document.getElementById("one").style.visibility="hidden";
+         document.getElementById("two").style.visibility="hidden";
+         document.getElementById("three").style.visibility="hidden";
+     }
+}
+
+function Login(){
+    window.location.href = "/login"
+}
