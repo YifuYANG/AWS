@@ -35,25 +35,68 @@
         <tr th:text="${photo.getLikes()}"></tr>
     </div>
     <button th:onclick="|like(${photo.getId()})|">Like it</button>
-    <form>
-        <tr>
-            <td>
-                Write your comment!!
-            </td>
-            <td><input id="id" name="id">
-                <button type="submit">submit</button>
-        </tr>
-    </form>
+
+           <div>
+               <tr>
+                   <td>
+                       Write your comment!!
+                   </td>
+                   <td><input id="comment">
+                       <button th:onclick="|comment(${photo.getId()})|">submit</button>
+               </tr>
+           </div>
     <hr>
 </div>
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Comments</th>
+        <th scope="col">Created at</th>
+        <th scope="col">Publisher id</th>
+    </tr>
+    </thead>
+    <tr th:each="comment : ${comments}">
+        <td th:text="${comment.getComment()}"></td>
+        <td th:text="${comment.getCreatedAt()}"></td>
+        <td th:text="${comment.getPublisherid()}"></td>
+    </tr>
+</table>
 </body>
 
 <script>
     function like(id){
+        var loginuser=JSON.parse(sessionStorage.getItem("user")).id
+        var info = {
+            loginuser:loginuser,
+            photoid:id
+        }
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/like");
+            xhr.setRequestHeader("Content-Type","application/json");
+            xhr.send(JSON.stringify(info));
+            window.location.reload();
+            // document.getElementById("clk").style.visibility="hidden";
+    }
+
+    function comment(id){
+        if(sessionStorage.length===0){
+            alert("login before comment");
+            window.location.href = "/login";
+        }
+        var info = {
+            loginuser:JSON.parse(sessionStorage.getItem("user")).id,
+            photoid:id,
+            comment : document.getElementById("comment").value
+        }
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "/like/"+id);
-        xhr.send();
+        xhr.open("POST", "/comment");
+        xhr.setRequestHeader("Content-Type","application/json");
+        xhr.send(JSON.stringify(info));
         window.location.reload();
+    }
+
+    function Home(){
+        window.location.href = "/";
     }
 </script>
 </html>

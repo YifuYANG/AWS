@@ -23,9 +23,9 @@ spring:
 cloud:
   aws:
     credentials:
-      access-key: ASIA4N4NQHJO2MBJDTYI
-      secret-key: TlqCLlEWK7bdPdaUW0+pxgrLXiZFBpVcSa664LaB
-      session-token: FwoGZXIvYXdzEM7//////////wEaDKR7rGwlHixfpCWlgSLDASysdUIIyVhz52I/w/bhJ/67tWeR0eFj/XWhkNqr/+JIRcHUJOcM+ntzD4alrVXILznarWjIraIfBpCwmRaUBcobo6icWMTyovadR82LlTNWt3HEOU5S6UDS4ONPXZ6T6Uc6wVg6YpVVNz8wSDQl0lcbv3WTIqc/1DrBIOR+4ukjPfkDR+S/zZBvqBldiNE7iqWNHXWUCeNzRYsChoiHqUXaLurKAYOOxdsEIPCRU4mzvcfFxdYbctgKgctJ8oQ8CLGKBSip0t6HBjItqVEbEqcFeWv+cROy4k9mB2EeEZfNUVR9ZuRD4rc4odhET15S+hlwsh4gkpCM
+      access-key: ASIA4N4NQHJO7IHL3G76
+      secret-key: K2BmXARpl1ys5xfMnNYjoVb4MXEVlHhNEAqHKDo7
+      session-token: FwoGZXIvYXdzEOX//////////wEaDMTa6UOgfz7p/1TrTiLDAaIl1Zc4hlntJKFf6tP1CDuSNHSXevJxLrMe6I/xxK8nYDLDvkyU4uGQNX3tSdjlh1lIjW1hm0HKUCUzvidng789iB+wowAZ9YFX6XYn0IvvVV1YE/bGjet2jQ4z7RmGx4aP3yTSkrE+pv5w8htgAgYLwCcY15IIsaLQWX3M0zB7NkaD/io/boT9wgka6ccDrKSPRqNsQgLweCsrkSouQ3hmCkCjePM4y4yGtZRrBPLihzOqi8AxqEPEWKNlnqK9mC8rtyiozuOHBjItILRSKsBFKdd+e8B+oZHo92VvrwQY+bNsN183FSknuXmYNuNxQZYrf2E+BXCG
     region:
       static: us-east-1
     stack:

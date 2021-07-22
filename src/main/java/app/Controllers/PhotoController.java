@@ -33,6 +33,7 @@ public class PhotoController {
         photoService.upload(file,name,desc,id);
         photoService.saveFile(file,name,desc,id);
         ModelAndView modelAndView = new ModelAndView("uploadphoto");
+        modelAndView.addObject("msg","upload complete");
         return modelAndView;
     }
 
@@ -67,14 +68,5 @@ public class PhotoController {
         }
         modelAndView.addObject("photo",results);
         return modelAndView;
-    }
-
-    @GetMapping(value = "/like/{id}")
-    public ModelAndView Like(@PathVariable Integer id){
-        Photo photo= new Photo();
-        photo=photoRepository.getOne(id);
-        photo.setLikes(photo.getLikes()+1);
-        photoRepository.save(photo);
-        return new ModelAndView( "redirect:/photodetail/"+id);
     }
 }

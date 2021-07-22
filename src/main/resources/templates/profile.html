@@ -34,7 +34,7 @@
             <td th:text="${photo.getLikes()}"></td>
             <td th:text="${photo.getCreatedAt()}"></td>
             <td>
-                <button th:onclick="|deletephoto(${photo.getId()},${photo.getOwnerid()})|">delete</button>
+                <button type="button" th:onclick="|deletephoto(${photo.getId()},${photo.getOwnerid()})|">delete</button>
             </td>
         </tr>
     </table>
