@@ -23,11 +23,13 @@ spring:
 cloud:
   aws:
     credentials:
-      access-key: ASIA4N4NQHJO7IHL3G76
-      secret-key: K2BmXARpl1ys5xfMnNYjoVb4MXEVlHhNEAqHKDo7
-      session-token: FwoGZXIvYXdzEOX//////////wEaDMTa6UOgfz7p/1TrTiLDAaIl1Zc4hlntJKFf6tP1CDuSNHSXevJxLrMe6I/xxK8nYDLDvkyU4uGQNX3tSdjlh1lIjW1hm0HKUCUzvidng789iB+wowAZ9YFX6XYn0IvvVV1YE/bGjet2jQ4z7RmGx4aP3yTSkrE+pv5w8htgAgYLwCcY15IIsaLQWX3M0zB7NkaD/io/boT9wgka6ccDrKSPRqNsQgLweCsrkSouQ3hmCkCjePM4y4yGtZRrBPLihzOqi8AxqEPEWKNlnqK9mC8rtyiozuOHBjItILRSKsBFKdd+e8B+oZHo92VvrwQY+bNsN183FSknuXmYNuNxQZYrf2E+BXCG
+      access-key: ASIA4N4NQHJOQS4WJF7Y
+      secret-key: 04SxM2+VwctWFiHPpRPwZWH9MvvNz8lwRNmOrzGx
+      session-token: FwoGZXIvYXdzEOz//////////wEaDFFtFlz5MzZfXA2riCLDAflRwjsNEYc4svnS4HjOeHiDhWnSUQIaw0utOLrAP0LI4z8idKNuwNnxaKMvCH8hNwz0cbi+Uh/4sGhmDiY+e9GzBlh3IJcNMYLlZByFPaz/ytD6MEkLrqFHu+Pb7FNIsy9enhPrd8HlhdkaNlejwZwCa+kh8v24WjQOFfB4yPAlkSlcySuXhxe6LoSL9y0DXhY9WirFFafGvso7uMUb2v2ZJuqYLpIaALGR2mH8cGM3axilGIIW3DI0V7Mf5VTvvU7xkCjNjuWHBjItSAi7wzIN6suN7li+BtYlVeMffSMYCzniJi8k6uBNQrEnM7Cava0hWChipFws
     region:
       static: us-east-1
+    end-point:
+      url: dynamodb.us-east-1.amazonaws.com
     stack:
       auto: false
 
