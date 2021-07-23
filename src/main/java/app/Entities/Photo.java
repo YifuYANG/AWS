@@ -18,10 +18,6 @@ public class Photo {
     @Column
     private Integer ownerid;
 
-    @Lob
-    @Column(columnDefinition = "MEDIUMBLOB",length = 1000)
-    private byte[] image;
-
     @Column
     private String description;
 

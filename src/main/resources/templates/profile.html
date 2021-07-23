@@ -12,7 +12,7 @@
 </head>
 
 <script type="text/javascript" src="~/js/profile.js"></script>
-<body>
+<body onload="check()">
 <div class="col-12">
     <h3 class="text-center">My Photo</h3>
     <button onclick="Home()" type="reset">Home</button>
@@ -52,5 +52,13 @@
     function Home(){
         window.location.href = "/"
     }
+
+    function check(){
+        if(JSON.parse(sessionStorage.getItem("user")).type===0){
+            alert("User can not view this page")
+            window.location.href = "/"
+        }
+    }
+
 </script>
 </html>

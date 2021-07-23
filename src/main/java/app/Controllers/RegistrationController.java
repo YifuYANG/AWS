@@ -35,8 +35,6 @@ public class RegistrationController {
             user.setType(regUser.getType());
             user.setSex(regUser.getSex());
             user.setPhone(regUser.getPhone());
-            user.setCreatedAt(now);
-            user.setUpdatedAt(now);
             user.setEmail(regUser.getEmail());
             user.setName(regUser.getName());
             userRepository.save(user);

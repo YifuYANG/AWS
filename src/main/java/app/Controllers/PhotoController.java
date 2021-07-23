@@ -3,6 +3,7 @@ package app.Controllers;
 
 import app.Entities.Photo;
 import app.JpaRepository.PhotoRepository;
+import app.JpaRepository.UserRepository;
 import app.Service.PhotoService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,9 @@ public class PhotoController {
 
     @Autowired
     private PhotoRepository photoRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
 
     @PostMapping("/upload")

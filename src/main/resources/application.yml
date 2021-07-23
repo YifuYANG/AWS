@@ -1,31 +1,25 @@
-server:
-  port: 8090
-spring:
-  mvc:
-    favicon:
-      enabled: false
-  datasource:
-    username: root
-    password: 23d78yyf
-    url: jdbc:mysql://127.0.0.1:3306/photoshop?serverTimezone=UTC
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto:  update
-  servlet:
-    multipart:
-      max-file-size: -1
-      max-request-size: -1
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-
+#server:
+#  port: 8090
+#spring:
+#  mvc:
+#    favicon:
+#      enabled: false
+#  datasource:
+#    username: root
+#    password: 23d78yyf
+#    url: jdbc:mysql://awspj.c4u5s4ejhnwe.us-east-1.rds.amazonaws.com:3306/
+#  jpa:
+#    hibernate:
+#      ddl-auto:  update
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
 
 cloud:
   aws:
     credentials:
-      access-key: ASIA4N4NQHJOQS4WJF7Y
-      secret-key: 04SxM2+VwctWFiHPpRPwZWH9MvvNz8lwRNmOrzGx
-      session-token: FwoGZXIvYXdzEOz//////////wEaDFFtFlz5MzZfXA2riCLDAflRwjsNEYc4svnS4HjOeHiDhWnSUQIaw0utOLrAP0LI4z8idKNuwNnxaKMvCH8hNwz0cbi+Uh/4sGhmDiY+e9GzBlh3IJcNMYLlZByFPaz/ytD6MEkLrqFHu+Pb7FNIsy9enhPrd8HlhdkaNlejwZwCa+kh8v24WjQOFfB4yPAlkSlcySuXhxe6LoSL9y0DXhY9WirFFafGvso7uMUb2v2ZJuqYLpIaALGR2mH8cGM3axilGIIW3DI0V7Mf5VTvvU7xkCjNjuWHBjItSAi7wzIN6suN7li+BtYlVeMffSMYCzniJi8k6uBNQrEnM7Cava0hWChipFws
+      access-key: ASIA4N4NQHJOQAJHHM5U
+      secret-key: KfxNtZRdkxk4G/zpxLFgzmb7cOE4dFE5ey2nt9O0
+      session-token: FwoGZXIvYXdzEAMaDDdvOP0bWN31XK3SCiLDAWiG4d5l7XclE+QRlk4NzYgomGJ9TsPvW33fu9bHkqVA1D5oQRElvIYMYKV6yZKAKSFyOqkxFyDbDN+6P1IZm7Whpmp2gz+hREH+5afIcYZPQg+s/FB+9Yr1/8CDISL/NGsIMwvreaJuaF+78IDQovha5jGm0nNofa5d8lzK1rSivWQQ6QDnGoHdjFTQeuLDpD4wvKsX/1czp59I5W0Z6AxCQZGNw4jl9v9ecOE/wRz9gMQvgM/cYN7LCHVuKb41PqnTJCjcn+qHBjIt3zLPk3a080g7alUXrc7YTl8vpwl25sC1EOPgql857OqHhfXgdoFPqYPD0/ZB
     region:
       static: us-east-1
     end-point:
