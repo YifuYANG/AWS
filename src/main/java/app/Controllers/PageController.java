@@ -11,6 +11,7 @@ public class PageController
 {
     @Autowired
     PhotoRepository photoRepository;
+
     // Router to Index Page
     @GetMapping(value = "/")
     public ModelAndView index(){

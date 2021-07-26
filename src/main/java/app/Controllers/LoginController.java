@@ -24,7 +24,6 @@ public class LoginController {
     public Map<String, Object> login(@RequestBody LoginForm login) {
         User user = userRepository.findByUsername(login.getUsername());
         Map<String, Object> map = new HashMap<>(3);
-        //System.out.println("----------"+encoder.encode(login.getPassword())+"--------------");
         if (user == null) {
             map.put("status", "fail");
             map.put("msg", "Account does not exist.");

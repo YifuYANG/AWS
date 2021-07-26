@@ -55,7 +55,6 @@ public class PhotoController {
         photoRepository.deleteById(id);
         //photoService.delete(photoRepository.getOne(id).getName());
         String url = "redirect://profile/"+ownerId;
-        System.out.println(url);
         return url;
     }
 

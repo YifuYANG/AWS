@@ -6,7 +6,7 @@
 #      enabled: false
 #  datasource:
 #    username: root
-#    password: 23d78yyf
+#    password:
 #    url: jdbc:mysql://awspj.c4u5s4ejhnwe.us-east-1.rds.amazonaws.com:3306/
 #  jpa:
 #    hibernate:
@@ -17,16 +17,16 @@
 cloud:
   aws:
     credentials:
-      access-key: ASIA4N4NQHJO2EHUMWW3
-      secret-key: 4frlsxwvznwUE36rn63ZRgtTifhEAVmj/5OqHOlh
-      session-token: FwoGZXIvYXdzEAQaDLCb7aFa2pWbSSz4vyLDAZZbjjlK2TQ8Nb96MlSRFSwApwCrU+qlXOOa5N6fLRqmyRWmG1MrKS2p8Z+LM4tdv+FyUn7gOmY/qe51UYk6Y5gRrKQYd8MNqCzYRwsRyZytEXdAiOSmlTZGbokT0yLJzS1zjF8wIS3C9sVFJpvHdQhDEygbeeHN2QGWKFONqUU6rQUUDETFmw2gGJFWbJERIYH8yvjG+/Wd9MB/h3NRCxwMr0bhWeszfttElorCYEgZm2S6tp66C3TWA3WU/MvlrdvzgCiYrOqHBjItvbe/BZ1ezO0ApZP3rjNqXb/IibFx79spO1VPBqM+JsOK7qGU6Hh4zzZthwPX
+      access-key:
+      secret-key:
+      session-token:
     region:
-      static: us-east-1
+      static:
     end-point:
-      url: dynamodb.us-east-1.amazonaws.com
+      url:
     stack:
-      auto: false
+      auto:
 
 application:
   bucket:
-    name: addphoto
+    name:
